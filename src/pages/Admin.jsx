@@ -30,6 +30,7 @@ import {
 import BrandLogo from '../components/BrandLogo'
 import { projectsData as defaultProjects } from '../data/projectsData'
 import { insightsData as defaultInsights } from '../data/insightsData'
+import { asset } from '../utils/asset'
 
 export default function Admin() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
@@ -180,7 +181,7 @@ export default function Admin() {
       sector: form.sector.value,
       location: form.location.value,
       badge: 'Sample Engineering Blueprint',
-      image: form.image.value || 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80',
+      image: form.image.value || asset('/images/blue ethernet in switch.jpg'),
       summary: form.summary.value,
       challenge: form.challenge.value,
       solution: form.solution.value,
@@ -227,7 +228,7 @@ export default function Admin() {
       readTime: form.readTime.value || '5 min read',
       author: form.author.value || 'ONICC Engineering Team',
       badge: 'Technical Whitepaper',
-      image: form.image.value || 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80',
+      image: form.image.value || asset('/images/blue ethernet in switch.jpg'),
       excerpt: form.excerpt.value,
       content: form.content.value.split('\n\n').filter(Boolean),
       takeaways: form.takeaways.value.split('\n').filter(Boolean)
@@ -807,7 +808,7 @@ export default function Admin() {
                   </div>
                   <div>
                     <label>Working Hours (EAT)</label>
-                    <input type="text" readOnly defaultValue="Mon – Fri: 8:00 AM – 5:30 PM, Sat: 9:00 AM – 1:00 PM" />
+                    <input type="text" readOnly defaultValue="Support available 24/7" />
                   </div>
                   <div>
                     <label>National Carrier Interconnects</label>
@@ -899,7 +900,7 @@ export default function Admin() {
                 <label>Featured Image URL (Unsplash)</label>
                 <input
                   name="image"
-                  defaultValue={editingProject.image || 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80'}
+                  defaultValue={editingProject.image || asset('/images/blue ethernet in switch.jpg')}
                 />
               </div>
 
@@ -1013,7 +1014,7 @@ export default function Admin() {
                 <label>Header Image URL</label>
                 <input
                   name="image"
-                  defaultValue={editingArticle.image || 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80'}
+                  defaultValue={editingArticle.image || asset('/images/blue ethernet in switch.jpg')}
                 />
               </div>
 

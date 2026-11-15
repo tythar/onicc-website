@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   Calendar,
@@ -9,23 +9,11 @@ import {
 } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import InsightModal from '../components/InsightModal'
-import { insightsData as defaultInsights } from '../data/insightsData'
+import { insightsData } from '../data/insightsData'
 
 export default function Insights() {
   const [activeCategory, setActiveCategory] = useState('all')
   const [selectedArticle, setSelectedArticle] = useState(null)
-  const [insightsList, setInsightsList] = useState(defaultInsights)
-
-  useEffect(() => {
-    const saved = localStorage.getItem('onicc_custom_insights')
-    if (saved) {
-      try {
-        setInsightsList(JSON.parse(saved))
-      } catch {
-        setInsightsList(defaultInsights)
-      }
-    }
-  }, [])
 
   const categories = [
     { key: 'all', label: 'All Insights' },
@@ -37,11 +25,11 @@ export default function Insights() {
   ]
 
   const filteredArticles = activeCategory === 'all'
-    ? insightsList
-    : insightsList.filter((art) => art.categoryKey === activeCategory)
+    ? insightsData
+    : insightsData.filter((art) => art.categoryKey === activeCategory)
 
-  const featuredArticle = filteredArticles[0]
-  const remainingArticles = filteredArticles.filter((art) => art.id !== featuredArticle?.id || activeCategory !== 'all')
+  const featuredArticle = insightsData[0]
+  const remainingArticles = filteredArticles.filter((art) => art.id !== featuredArticle.id || activeCategory !== 'all')
 
   return (
     <div className="insights-page">

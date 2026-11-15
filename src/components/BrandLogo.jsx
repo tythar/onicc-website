@@ -1,5 +1,6 @@
+import { asset } from '../utils/asset'
 /**
- * BrandLogo â€” Official ONICC Brand Lockup Component
+ * BrandLogo — Official ONICC Brand Lockup Component
  * Renders the authentic ONICC emblem alongside the bold red wordmark,
  * cyan telecommunication transmission tower, and the corporate descriptor:
  * "OHMS NETWORK INFRASTRUCTURE AND COMMUNICATION COMPANY"
@@ -10,7 +11,7 @@ export default function BrandLogo({ mode = 'light', variant = 'full', className 
       {/* Authentic Emblem Icon */}
       <div className="brand-emblem-wrap">
         <img
-          src="/images/onicc-symbol-transparent.png"
+          src={asset('/images/onicc-symbol-transparent.png')}
           alt="ONICC Globe Emblem"
           className="brand-emblem-img"
           width="48"

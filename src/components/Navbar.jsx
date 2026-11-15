@@ -38,7 +38,7 @@ export default function Navbar() {
             <span className="top-bar-divider">•</span>
             <span className="top-bar-item">
               <Clock size={13} className="top-bar-icon" />
-              <span>Mon – Fri: 8:00 AM – 5:30 PM EAT</span>
+              <span>Support available 24/7</span>
             </span>
           </div>
 
@@ -136,7 +136,7 @@ export default function Navbar() {
             </p>
             <p className="mobile-hours">
               <Clock size={15} />
-              Mon – Fri: 8:00 AM – 5:30 PM
+              Support available 24/7
             </p>
 
             <Link

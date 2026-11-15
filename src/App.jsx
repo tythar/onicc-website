@@ -10,7 +10,6 @@ import Projects from './pages/Projects'
 import Partners from './pages/Partners'
 import Insights from './pages/Insights'
 import Contact from './pages/Contact'
-import Admin from './pages/Admin'
 
 import './App.css'
 
@@ -29,7 +28,6 @@ function App() {
           <Route path="/partners" element={<Partners />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/admin" element={<Admin />} />
           <Route
             path="*"
             element={

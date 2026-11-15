@@ -1,3 +1,4 @@
+import { asset } from '../utils/asset'
 export const insightsData = [
   {
     id: 'art-01',
@@ -8,7 +9,7 @@ export const insightsData = [
     readTime: '6 min read',
     author: 'ONICC Network Engineering Team',
     badge: 'Technical Whitepaper',
-    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/blue ethernet in switch.jpg'),
     excerpt: 'As enterprise bandwidth demand accelerates across Uganda, traditional single-path fiber links expose organizations to severe downtime from civil roadworks and fiber cuts. Here is how dual-ring optical route diversity and precision fusion splicing prevent network dropouts.',
     content: [
       'The expansion of Kampala’s business districts—from Nakasero and Kololo to Nakawa and Mukono—has triggered an unprecedented surge in data traffic. However, organizations frequently experience recurring micro-outages and elevated round-trip latency due to physical fiber degradation and uncalibrated mechanical splices.',
@@ -30,7 +31,7 @@ export const insightsData = [
     readTime: '7 min read',
     author: 'ONICC Power Systems Group',
     badge: 'Infrastructure Analysis',
-    image: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/yellow ethernet.jpg'),
     excerpt: 'Fluctuating grid voltage and sudden brownouts degrade sensitive enterprise server hardware. An analysis of sizing Lithium Iron Phosphate (LiFePO4) storage banks and pure sine wave hybrid inverters to eliminate reboot downtime.',
     content: [
       'Commercial facilities in East Africa face persistent challenges with power quality. Sags, surges, and rolling brownouts don’t just interrupt work—they actively destroy switched-mode power supplies inside routers, switches, and server chassis.',
@@ -52,7 +53,7 @@ export const insightsData = [
     readTime: '5 min read',
     author: 'Physical Security Systems Lead',
     badge: 'Security Brief',
-    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/grey and blue ethernet.jpg'),
     excerpt: 'Keys and magnetic swipe cards can be lost, cloned, or shared. Discover how modern commercial facilities combine contactless facial recognition turnstiles with perimeter AI tripwires to maintain complete premises control.',
     content: [
       'Physical security is the foundational first layer of cybersecurity. An unmonitored server room door renders the most sophisticated enterprise firewall completely irrelevant.',
@@ -74,7 +75,7 @@ export const insightsData = [
     readTime: '6 min read',
     author: 'ONICC Educational Systems Team',
     badge: 'Institutional Guide',
-    image: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/blue ethernet in switch.jpg'),
     excerpt: 'Deploying a 50 to 100-seat student laboratory requires far more than placing computers on desks. Key considerations in power distribution, network throttling, thermal dissipation, and centralized image restoration.',
     content: [
       'Computer laboratories in schools, vocational institutes, and universities undergo brutal operational wear. Without proper thermal airflow planning and power conditioning, hardware failure rates can cripple educational curricula.',
@@ -96,7 +97,7 @@ export const insightsData = [
     readTime: '5 min read',
     author: 'Software Architecture Practice',
     badge: 'Enterprise Strategy',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/grey and blue ethernet2.jpg'),
     excerpt: 'Why mid-sized enterprises across East Africa encounter operational gridlock when relying on manual spreadsheets for inventory, procurement, and mobile money reconciliation—and how custom cloud software unlocks rapid scalability.',
     content: [
       'As organizations grow beyond 20 employees and multiple branch locations, spreadsheet-based management breaks down. Version collisions, accidental cell deletions, and lack of audit trails create significant financial reconciliation leaks.',

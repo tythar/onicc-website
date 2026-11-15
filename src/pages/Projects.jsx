@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   MapPin,
@@ -8,23 +8,11 @@ import {
 } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import ProjectModal from '../components/ProjectModal'
-import { projectsData as defaultProjects } from '../data/projectsData'
+import { projectsData } from '../data/projectsData'
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('all')
   const [selectedProject, setSelectedProject] = useState(null)
-  const [projectsList, setProjectsList] = useState(defaultProjects)
-
-  useEffect(() => {
-    const saved = localStorage.getItem('onicc_custom_projects')
-    if (saved) {
-      try {
-        setProjectsList(JSON.parse(saved))
-      } catch {
-        setProjectsList(defaultProjects)
-      }
-    }
-  }, [])
 
   const categories = [
     { key: 'all', label: 'All Projects' },
@@ -37,8 +25,8 @@ export default function Projects() {
   ]
 
   const filteredProjects = activeCategory === 'all'
-    ? projectsList
-    : projectsList.filter((p) => p.categoryKey === activeCategory)
+    ? projectsData
+    : projectsData.filter((p) => p.categoryKey === activeCategory)
 
   return (
     <div className="projects-page">

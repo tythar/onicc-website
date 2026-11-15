@@ -12,22 +12,35 @@ import {
   PhoneCall
 } from 'lucide-react'
 import { solutionsData } from '../data/solutionsData'
+import { companyFacts } from '../data/companyFacts'
 import { projectsData } from '../data/projectsData'
 import InfrastructureDiagram from '../components/InfrastructureDiagram'
 import ProjectModal from '../components/ProjectModal'
+import { asset } from '../utils/asset'
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState(null)
 
   const featuredProjects = projectsData.slice(0, 3)
 
+  const stripItems = [
+    companyFacts.yearsExperience && { value: `${companyFacts.yearsExperience}+`, label: 'Years of experience' },
+    companyFacts.fieldEngineers && { value: `${companyFacts.fieldEngineers}+`, label: 'Field engineers' },
+    { value: '24/7', label: 'Support & response' },
+    { value: 'Tested', label: 'Every system checked before handover' },
+    { value: String(solutionsData.length), label: 'Solution areas' },
+  ].filter(Boolean).slice(0, 4)
+
   return (
     <div className="home-page">
       {/* =========================================================================
           1. HERO SECTION
          ========================================================================= */}
-      <section className="hx-hero">
-        <div className="container hx-inner">
+      <section
+        className="hx-hero"
+        style={{ '--hero-img': `url(${asset('/images/blue ethernet and yellow lights.jpg')})` }}
+      >
+        <div className="container hero-container">
           <Reveal className="hero-content hx-text">
             <div className="hero-eyebrow-wrap">
               <span className="hero-badge-pill">
@@ -41,7 +54,9 @@ export default function Home() {
             </div>
 
             <h1 className="hero-title">
-              Connecting <span className="highlight-turquoise">Today</span> Powring <span className="highlight-red">Tomorrow.</span>
+              Connecting today,
+              <br />
+              <span className="highlight-red">powering tomorrow.</span>
             </h1>
 
             <p className="hero-description">
@@ -60,27 +75,18 @@ export default function Home() {
               </Link>
             </div>
           </Reveal>
+
         </div>
       </section>
 
       <div className="container hx-strip-outer">
-        <Reveal delay={200} className="hx-strip">
-          <div>
-            <strong>{solutionsData.length}</strong>
-            <span>Solution areas</span>
-          </div>
-          <div>
-            <strong>4 phases</strong>
-            <span>Survey, design, deploy, support</span>
-          </div>
-          <div>
-            <strong>Turnkey</strong>
-            <span>From first visit to handover</span>
-          </div>
-          <div>
-            <strong>Kampala</strong>
-            <span>Uganda</span>
-          </div>
+        <Reveal delay={200} className="hx-strip" style={{ '--cols': stripItems.length }}>
+          {stripItems.map((item) => (
+            <div key={item.label}>
+              <strong>{item.value}</strong>
+              <span>{item.label}</span>
+            </div>
+          ))}
         </Reveal>
       </div>
 
@@ -137,8 +143,8 @@ export default function Home() {
           <Reveal direction="right" delay={150} className="who-visual-composite">
             <div className="composite-main-image-wrap">
               <img
-                src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80"
-                alt="ONICC Network Infrastructure Engineer on Site"
+                src={asset('/images/grey and blue ethernet2.jpg')}
+                alt="ONICC field engineer on site"
                 className="composite-main-img"
               />
               <div className="composite-badge-card">

@@ -1,25 +1,8 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { MapPin, Clock, ArrowRight, Shield, Globe, Radio, Cpu, Sun, Lock } from 'lucide-react'
 import BrandLogo from './BrandLogo'
 
 export default function Footer() {
-  const [newsletterEmail, setNewsletterEmail] = useState('')
-  const [newsletterStatus, setNewsletterStatus] = useState(null)
-
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault()
-    if (!newsletterEmail || !newsletterEmail.includes('@')) {
-      setNewsletterStatus({ type: 'error', message: 'Please enter a valid business email address.' })
-      return
-    }
-    setNewsletterStatus({
-      type: 'success',
-      message: 'Thank you for subscribing to ONICC Infrastructure & Tech Briefs.'
-    })
-    setNewsletterEmail('')
-  }
-
   return (
     <footer className="site-footer">
       {/* Top Pre-Footer CTA Strip */}
@@ -65,7 +48,7 @@ export default function Footer() {
             </p>
             <div className="office-hours">
               <Clock size={14} />
-              <span>Monday – Friday: 8:00 AM – 5:30 PM EAT</span>
+              <span>Support available 24/7</span>
             </div>
           </div>
         </div>
@@ -127,44 +110,19 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Ecosystem & Newsletter */}
-        <div className="footer-col footer-col--newsletter">
-          <h4 className="footer-heading">Stay Connected</h4>
-          <p className="footer-newsletter-text">
-            Subscribe to periodic technical updates on fiber deployments, clean energy developments,
-            and IT infrastructure best practices in East Africa.
-          </p>
-
-          <form onSubmit={handleNewsletterSubmit} className="footer-newsletter-form">
-            <div className="newsletter-input-group">
-              <input
-                type="email"
-                placeholder="Enter your work email"
-                value={newsletterEmail}
-                onChange={(e) => setNewsletterEmail(e.target.value)}
-                required
-                className="newsletter-input"
-              />
-              <button type="submit" className="newsletter-btn" aria-label="Subscribe">
-                <ArrowRight size={16} />
-              </button>
-            </div>
-            {newsletterStatus && (
-              <p className={`newsletter-status ${newsletterStatus.type}`}>
-                {newsletterStatus.message}
-              </p>
-            )}
-          </form>
+        {/* Technology ecosystem */}
+        <div className="footer-col">
+          <h4 className="footer-heading">Technology Ecosystem</h4>
 
           <div className="footer-ecosystem-snippet">
-            <span className="snippet-label">Technology Ecosystem Alignment:</span>
+            <span className="snippet-label">Platforms we work with:</span>
             <div className="snippet-tags">
-              <span>MTN Interconnect</span>
+              <span>MTN Uganda</span>
               <span>Airtel</span>
               <span>RENU</span>
-              <span>Huawei Optical</span>
-              <span>Microsoft Cloud</span>
-              <span>Cisco Systems</span>
+              <span>Huawei</span>
+              <span>Microsoft</span>
+              <span>Cisco</span>
             </div>
           </div>
         </div>
@@ -181,9 +139,7 @@ export default function Footer() {
             <span className="tag-dot">•</span>
             <span className="tag-item">Bukoto, Kampala</span>
             <span className="tag-dot">•</span>
-            <Link to="/admin" className="tag-item staff-cms-link">
-              Staff CMS Portal ↗
-            </Link>
+            <span className="tag-item">ICT & Infrastructure Engineering</span>
           </div>
         </div>
       </div>

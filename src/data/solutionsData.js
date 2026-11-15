@@ -1,3 +1,4 @@
+import { asset } from '../utils/asset'
 export const solutionsData = [
   {
     id: 'networking-telecom',
@@ -6,7 +7,7 @@ export const solutionsData = [
     badge: 'Core Infrastructure',
     tagline: 'Carrier-grade connectivity, optical backbones, and mission-critical enterprise LAN/WAN installations.',
     summary: 'From metro fiber rollouts to high-density structured cabling and enterprise routing, ONICC engineers robust network foundations that deliver high throughput, minimal packet loss, and zero-compromise availability.',
-    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/blue ethernet in switch.jpg'),
     capabilities: [
       {
         name: 'Optical Fiber Infrastructure',
@@ -42,7 +43,7 @@ export const solutionsData = [
     badge: 'Clean Power Systems',
     tagline: 'Industrial-grade solar arrays, intelligent hybrid inverters, and lithium energy storage for uninterrupted operations.',
     summary: 'Power instability and frequent grid spikes jeopardize delicate IT hardware. ONICC designs and installs resilient commercial and institutional solar power solutions that guarantee business continuity.',
-    image: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/yellow ethernet.jpg'),
     capabilities: [
       {
         name: 'Commercial & Institutional Solar Systems',
@@ -78,7 +79,7 @@ export const solutionsData = [
     badge: 'Premises Governance',
     tagline: 'AI-assisted IP surveillance, biometric physical access control, and unified premises protection.',
     summary: 'Protect physical infrastructure, data halls, and institutional premises with intelligent IP surveillance, perimeter security sensing, and tamper-resistant access control systems engineered for 24/7 reliability.',
-    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/grey and blue ethernet.jpg'),
     capabilities: [
       {
         name: 'High-Definition IP CCTV Networks',
@@ -114,7 +115,7 @@ export const solutionsData = [
     badge: 'Enterprise Engineering',
     tagline: 'Custom business platforms, web applications, mobile tools, and automated workflow digitisation.',
     summary: 'We build tailored digital solutions that eliminate operational bottlenecks. From responsive corporate web portals to custom inventory, billing, and management tools, our software is engineered for security and scale.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/grey and blue ethernet2.jpg'),
     capabilities: [
       {
         name: 'Corporate Web Development & Portals',
@@ -150,7 +151,7 @@ export const solutionsData = [
     badge: 'Cloud Infrastructure',
     tagline: 'High-speed NVMe hosting, .ug domain administration, enterprise corporate email, and cloud migrations.',
     summary: 'Deploy your digital assets on high-availability cloud infrastructure. ONICC manages domain registrations, ultra-fast web hosting, Microsoft 365 / Google Workspace deployments, and automated cloud backup repositories.',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/blue ethernet and yellow lights.jpg'),
     capabilities: [
       {
         name: '.UG & Global Domain Management',
@@ -186,7 +187,7 @@ export const solutionsData = [
     badge: 'Academic & Corporate Labs',
     tagline: 'Complete computer laboratory deployments, institutional networking, workstation provisioning, and management software.',
     summary: 'Turnkey computer laboratory engineering for educational institutions, vocational training centres, and corporate test labs. We provide furniture layouts, structured power wiring, network segmentation, and endpoint management.',
-    image: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/blue ethernet in switch.jpg'),
     capabilities: [
       {
         name: 'Turnkey Computer Lab Architecture',

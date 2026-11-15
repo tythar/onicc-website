@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   Radio,
@@ -10,7 +11,27 @@ import {
 import PageHero from '../components/PageHero'
 import { ecosystemCategories, engineeringPrinciples } from '../data/partnersData'
 
+function PartnerLogo({ src, name, className = '' }) {
+  const [failed, setFailed] = useState(false)
+
+  if (!src || failed) {
+    return <span className="partner-logo-text">{name}</span>
+  }
+
+  return (
+    <img
+      src={src}
+      alt={`${name} logo`}
+      className={className}
+      loading="lazy"
+      onError={() => setFailed(true)}
+    />
+  )
+}
+
 export default function Partners() {
+  const allPlatforms = ecosystemCategories.flatMap((c) => c.platforms)
+
   const getCategoryIcon = (id) => {
     switch (id) {
       case 'carriers':
@@ -54,6 +75,32 @@ export default function Partners() {
         </div>
       </section>
 
+      {/* 2b. Logo wall */}
+      <section className="section-padding partner-wall-section">
+        <div className="container">
+          <div className="section-header-centered">
+            <span className="section-eyebrow-tag">
+              <span className="eyebrow-indicator"></span>
+              PLATFORMS & TECHNOLOGIES
+            </span>
+            <h2 className="section-title">Technologies we deploy and support.</h2>
+          </div>
+
+          <div className="partner-logo-wall">
+            {allPlatforms.map((platform) => (
+              <div key={platform.name} className="partner-logo-tile" title={platform.name}>
+                <PartnerLogo src={platform.logo} name={platform.name} className="partner-logo-img" />
+              </div>
+            ))}
+          </div>
+
+          <p className="partner-wall-note">
+            Logos are trademarks of their respective owners and are shown only to identify the
+            technologies ONICC deploys. Their use does not imply endorsement or a formal partnership.
+          </p>
+        </div>
+      </section>
+
       {/* 3. Categorized Ecosystem Grid */}
       <section className="section-padding ecosystem-main-section">
         <div className="container">
@@ -77,6 +124,9 @@ export default function Partners() {
                     {category.platforms.map((platform, idx) => (
                       <div key={idx} className="platform-card">
                         <div className="platform-card-top">
+                          <div className="platform-logo-box">
+                            <PartnerLogo src={platform.logo} name={platform.name} className="platform-logo-img" />
+                          </div>
                           <span className="platform-badge">{platform.badge}</span>
                         </div>
                         <h3 className="platform-name">{platform.name}</h3>

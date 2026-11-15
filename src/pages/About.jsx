@@ -12,6 +12,7 @@ import {
   Sun
 } from 'lucide-react'
 import PageHero from '../components/PageHero'
+import { asset } from '../utils/asset'
 
 export default function About() {
   const values = [
@@ -253,7 +254,7 @@ export default function About() {
 
           <div className="standards-visual">
             <img
-              src="https://images.unsplash.com/photo-1520869562399-e772f042f422?auto=format&fit=crop&w=1200&q=80"
+              src={asset('/images/grey and blue ethernet.jpg')}
               alt="Telecommunication Tower Installation"
               className="standards-img"
             />

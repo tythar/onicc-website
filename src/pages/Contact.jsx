@@ -87,32 +87,11 @@ export default function Contact() {
 
     setSubmitting(true)
 
-    // Save inquiry to persistent storage for CMS Admin Dashboard
-    const newInquiry = {
-      id: `inq-${Date.now()}`,
-      name: formData.name,
-      company: formData.company,
-      email: formData.email,
-      phone: formData.phone,
-      service: formData.service || 'Multi-Disciplinary Turnkey Fit-out',
-      location: formData.location || 'Kampala, Uganda',
-      subject: formData.subject,
-      message: formData.message,
-      date: new Date().toISOString().replace('T', ' ').substring(0, 16),
-      status: 'New'
-    }
-
-    try {
-      const existing = JSON.parse(localStorage.getItem('onicc_inquiries') || '[]')
-      localStorage.setItem('onicc_inquiries', JSON.stringify([newInquiry, ...existing]))
-    } catch {
-      // Fallback if local storage restricted
-    }
-
+    // Simulate backend submission
     setTimeout(() => {
       setSubmitting(false)
       setSubmitted(true)
-    }, 700)
+    }, 1000)
   }
 
   const handleReset = () => {
@@ -179,8 +158,7 @@ export default function Contact() {
                 <div className="detail-item">
                   <strong>Operating Hours:</strong>
                   <p>
-                    <Clock size={14} className="inline-icon" /> Monday – Friday: 8:00 AM – 5:30 PM EAT<br />
-                    <Clock size={14} className="inline-icon" /> Saturday: 9:00 AM – 1:00 PM EAT (Emergency Desk)
+                    <Clock size={14} className="inline-icon" /> Support available 24/7
                   </p>
                 </div>
 
@@ -233,7 +211,8 @@ export default function Contact() {
                     <span>Target Project: {formData.subject}</span>
                     <span>Location: {formData.location || 'Uganda'}</span>
                     <span className="note-text">
-                      Registered in ONICC CMS Dispatch Queue. Our engineering team in Bukoto will review your requirements.
+                      Note: Frontend demonstration mode active. In production, this form triggers an automated
+                      engineering ticket in the ONICC project dispatch queue.
                     </span>
                   </div>
                   <button className="btn btn-primary" onClick={handleReset}>
@@ -388,7 +367,7 @@ export default function Contact() {
                       className="btn btn-brand-red btn-lg btn-block"
                     >
                       {submitting ? (
-                        <span>Validating & Transmitting to Dispatch...</span>
+                        <span>Validating & Transmitting...</span>
                       ) : (
                         <>
                           <span>Submit Scoping Request</span>
@@ -398,7 +377,7 @@ export default function Contact() {
                     </button>
                     <p className="form-footnote">
                       <ShieldCheck size={14} className="inline-shield" />
-                      Client confidentiality guaranteed. Dispatched directly to ONICC engineering queue.
+                      Client confidentiality guaranteed. No data is shared with third parties.
                     </p>
                   </div>
                 </form>

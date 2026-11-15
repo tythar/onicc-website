@@ -1,3 +1,4 @@
+import { asset } from '../utils/asset'
 /**
  * ONICC Project Portfolio Data
  * Note: Clearly labelled sample project blueprints representing ONICC's technical capability areas.
@@ -12,7 +13,7 @@ export const projectsData = [
     sector: 'Education & Institutional',
     location: 'Kampala Central & Nakawa, Uganda',
     badge: 'Sample Engineering Blueprint',
-    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/blue ethernet in switch.jpg'),
     summary: 'Design and deployment of a 12-kilometer redundant single-mode optical fiber loop connecting three multi-storey academic campuses with sub-millisecond local latency.',
     challenge: 'The institution was operating on fragmented wireless links prone to severe packet loss and heavy latency during peak hours, impairing administrative systems and student portals.',
     solution: 'ONICC engineered an underground 48-core G.652.D single-mode fiber infrastructure ring featuring redundant route diversity, low-loss fusion splicing, and optical distribution frames (ODFs) at each campus server room.',
@@ -37,7 +38,7 @@ export const projectsData = [
     sector: 'Manufacturing & Agro-Processing',
     location: 'Mukono Industrial Corridor, Uganda',
     badge: 'Sample Engineering Blueprint',
-    image: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/yellow ethernet.jpg'),
     summary: 'Turnkey 45kWp rooftop solar photovoltaic array integrated with three-phase hybrid inverters and 60kWh Lithium Iron Phosphate (LiFePO4) storage for continuous processing continuity.',
     challenge: 'Frequent 4-to-6 hour national grid outages and voltage fluctuations caused production halts, corrupted server databases, and inflated auxiliary diesel generator operating costs.',
     solution: 'Engineered a rooftop solar array with Tier-1 540W monocrystalline modules, dual 15kW hybrid inverters with smart MPPT tracking, and sub-10ms zero-break automatic transfer switches dedicated to sensitive server and packaging control circuits.',
@@ -62,7 +63,7 @@ export const projectsData = [
     sector: 'Financial & Corporate',
     location: 'Nakasero Business District, Kampala, Uganda',
     badge: 'Sample Engineering Blueprint',
-    image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/grey and blue ethernet.jpg'),
     summary: 'A unified perimeter and interior security architecture encompassing 64 4K IP cameras with edge AI analytics, optical speed gates, and multi-factor biometric server room access.',
     challenge: 'The commercial facility needed to replace an obsolete analog CCTV system with a unified, tamper-proof security architecture adhering to stringent financial data security guidelines.',
     solution: 'Designed and deployed an end-to-end IP video network over an isolated VLAN. Features AI perimeter intrusion detection, automated number plate recognition (ANPR) at parking gates, and dual-authentication facial/fingerprint door controllers.',
@@ -87,7 +88,7 @@ export const projectsData = [
     sector: 'Higher Education & Vocational',
     location: 'Entebbe, Uganda',
     badge: 'Sample Engineering Blueprint',
-    image: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/blue ethernet in switch.jpg'),
     summary: 'Complete engineering of an 80-seat modern computer laboratory including ergonomic benching, structured copper cabling, content-filtering firewall, and centralized lab management software.',
     challenge: 'An expanding training institution required a robust ICT facility capable of hosting standardized certification examinations, intensive multimedia design, and coding bootcamps without network congestion.',
     solution: 'ONICC executed a turnkey fit-out: custom perimeter raceways, regulated power distribution boards, Cat6A gigabit drops per seat, enterprise Wi-Fi 6 access points, and disk-imaging software for instant lab resets.',
@@ -112,7 +113,7 @@ export const projectsData = [
     sector: 'Logistics & Supply Chain',
     location: 'Jinja & Kampala Corridors, Uganda',
     badge: 'Sample Engineering Blueprint',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/grey and blue ethernet2.jpg'),
     summary: 'A secure cloud-hosted enterprise resource planning (ERP) platform and companion Flutter mobile application enabling real-time dispatch, inventory reconciliation, and mobile money payments.',
     challenge: 'Manual paper-based dispatch records caused severe reconciliation discrepancies between regional warehouses and central Kampala finance teams, delaying billing cycles by weeks.',
     solution: 'Engineered a responsive React/Node.js web portal with PostgreSQL relational database and an offline-first mobile app for field drivers. Includes direct API integrations with MTN MoMo, Airtel Money, and automated SMS alerts.',
@@ -137,7 +138,7 @@ export const projectsData = [
     sector: 'Professional Services',
     location: 'Kololo, Kampala, Uganda',
     badge: 'Sample Engineering Blueprint',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80',
+    image: asset('/images/blue ethernet and yellow lights.jpg'),
     summary: 'Complete migration of 150+ corporate user accounts from legacy POP3/IMAP mailboxes to a fortified cloud collaboration suite with custom .ug DNS and automated offsite backups.',
     challenge: 'A prominent consulting partnership experienced recurring email deliverability failures, spam blacklisting, and lack of mobile calendar synchronization across its regional partners.',
     solution: 'Configured hardened DNSSEC, SPF, DKIM, and DMARC security records for their corporate .co.ug domain. Seamlessly migrated 12 years of historical email archives to enterprise cloud infrastructure with zero data loss or mailbox downtime.',
