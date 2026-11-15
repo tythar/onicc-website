@@ -7,3 +7,5 @@ export default defineConfig(({ command }) => ({
   // On GitHub Pages the site lives at /onicc-website/. While developing it stays at "/".
   base: command === 'build' ? '/onicc-website/' : '/',
 }))
+
+
