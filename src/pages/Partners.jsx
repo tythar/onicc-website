@@ -1,0 +1,153 @@
+import { Link } from 'react-router-dom'
+import {
+  Radio,
+  Server,
+  Cloud,
+  Info,
+  ArrowRight,
+  Cpu
+} from 'lucide-react'
+import PageHero from '../components/PageHero'
+import { ecosystemCategories, engineeringPrinciples } from '../data/partnersData'
+
+export default function Partners() {
+  const getCategoryIcon = (id) => {
+    switch (id) {
+      case 'carriers':
+        return Radio
+      case 'hardware':
+        return Server
+      case 'cloud':
+        return Cloud
+      default:
+        return Cpu
+    }
+  }
+
+  return (
+    <div className="partners-page">
+      {/* 1. Page Hero */}
+      <PageHero
+        eyebrow="TECHNOLOGY ECOSYSTEM"
+        title="Interoperable with Africa’s foremost carriers, hardware, and"
+        highlightText="cloud platforms."
+        description="Explore the national telecommunications networks, optical hardware manufacturers, and cloud platforms that ONICC interfaces with to deliver robust, multi-vendor enterprise infrastructure."
+        breadcrumbs={[{ label: 'Technology Ecosystem' }]}
+        badge="Multi-Vendor Interoperability"
+      />
+
+      {/* 2. Transparency & Verified Relationship Notice */}
+      <section className="ecosystem-notice-section">
+        <div className="container">
+          <div className="ecosystem-notice-card">
+            <Info size={22} className="notice-icon" />
+            <div className="notice-content">
+              <h4>Ecosystem Transparency Statement</h4>
+              <p>
+                Organizations, carrier networks, and brand names referenced on this page identify technology
+                platforms, optical equipment manufacturers, and telecommunications carriers whose systems ONICC
+                deploys, configures, and interfaces with. Inclusion does not imply direct commercial sponsorship,
+                exclusive partnership, or formal brand endorsement unless explicitly designated.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Categorized Ecosystem Grid */}
+      <section className="section-padding ecosystem-main-section">
+        <div className="container">
+          <div className="ecosystem-stack">
+            {ecosystemCategories.map((category) => {
+              const CategoryIcon = getCategoryIcon(category.id)
+
+              return (
+                <div key={category.id} className="ecosystem-category-block">
+                  <div className="category-block-header">
+                    <div className="header-icon-wrap">
+                      <CategoryIcon size={24} />
+                    </div>
+                    <div>
+                      <h2 className="category-block-title">{category.title}</h2>
+                      <p className="category-block-desc">{category.description}</p>
+                    </div>
+                  </div>
+
+                  <div className="platforms-grid">
+                    {category.platforms.map((platform, idx) => (
+                      <div key={idx} className="platform-card">
+                        <div className="platform-card-top">
+                          <span className="platform-badge">{platform.badge}</span>
+                        </div>
+                        <h3 className="platform-name">{platform.name}</h3>
+                        {platform.fullName && (
+                          <span className="platform-fullname">{platform.fullName}</span>
+                        )}
+                        <strong className="platform-role">{platform.role}</strong>
+                        <p className="platform-scope">{platform.scope}</p>
+
+                        <div className="platform-status-indicator">
+                          <span className="dot-active"></span>
+                          <span>Active Engineering Interface</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Engineering Principles Grid */}
+      <section className="section-padding bg-light-alt principles-section">
+        <div className="container">
+          <div className="section-header-centered">
+            <span className="section-eyebrow-tag">
+              <span className="eyebrow-indicator"></span>
+              ARCHITECTURAL INTEGRITY
+            </span>
+            <h2 className="section-title">How we select and integrate technologies.</h2>
+            <p className="section-subtitle">
+              We design infrastructure around what works best for your specific operational context.
+            </p>
+          </div>
+
+          <div className="principles-grid">
+            {engineeringPrinciples.map((item, idx) => (
+              <div key={idx} className="principle-card">
+                <div className="principle-number">0{idx + 1}</div>
+                <h3 className="principle-title">{item.title}</h3>
+                <p className="principle-desc">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Bottom Consultation Banner */}
+      <section className="section-cta-banner">
+        <div className="container cta-banner-card">
+          <div className="cta-card-content">
+            <span className="cta-card-eyebrow">INTEGRATION CONSULTATION</span>
+            <h2 className="cta-card-title">Need to integrate existing hardware with a new network backhaul?</h2>
+            <p className="cta-card-desc">
+              Our engineers in Bukoto can audit your existing server room, carrier leased lines, and optical
+              equipment to design a high-throughput, unified network topology.
+            </p>
+          </div>
+          <div className="cta-card-buttons">
+            <Link to="/contact" className="btn btn-brand-red btn-lg">
+              Consult with ONICC Engineers
+              <ArrowRight size={17} />
+            </Link>
+            <Link to="/solutions" className="btn btn-outline-white btn-lg">
+              Explore Solutions
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
